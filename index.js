@@ -1,5 +1,6 @@
 const dataDiv = document.getElementById('data-div');
 const input = document.getElementById('city-name')
+const country = document.getElementById('country')
 const city = document.getElementById('city-name').value
 const temperature = document.getElementById('temperature')
 const information = document.getElementById('information')
@@ -33,6 +34,7 @@ function fetchData() {
        weatherIcon.innerHTML = `<img src="${iconUrl}" alt="Weather icon">`
         temperature.textContent = `${data.main.temp} °C`
         information.textContent = data.weather[0].main
+        country.innerHTML = `Country: {data.sys.country}`
         feels_like.textContent = `Feels like: ${data.main.feels_like} °C`
         wind.innerHTML = `💨${data.wind.speed}km/h`
         humidity.innerHTML = `💧${data.main.humidity}%`
